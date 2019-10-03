@@ -28,5 +28,7 @@ typedef enum deleteType
 
 Node *insertNode(Node *list, int value, insType type);
 void printLinkList(Node *list);
+Node *pointNodeAtPos(Node *list, int position);
+int valueOfNodeAtPos(Node *list, int position);
 
 #endif // !LLINKLISTUTILITY_H

@@ -24,6 +24,9 @@
     <ClCompile Include="LinkListInsertion.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkListTraversal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LlinkListUtility.h">

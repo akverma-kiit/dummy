@@ -154,6 +154,7 @@
     <ClCompile Include="LinkList1.c" />
     <ClCompile Include="LinkListInsertion.c" />
     <ClCompile Include="LinkListPrinting.c" />
+    <ClCompile Include="LinkListTraversal.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LlinkListUtility.h" />

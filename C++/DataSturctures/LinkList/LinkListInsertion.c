@@ -45,6 +45,30 @@ Node *insertNodeEnding(Node *list, int value)
   }
 }
 
+Node *insertNodePostion(Node *list, int value, int Position)
+{
+  if (list == NULL && Position != 1)
+  {
+    printf("WARNINIG LINK LIST IS EMPTY\n");
+  }
+  else if (list == NULL && Position == 1)
+  {
+    Node *ptr1 = createNode(value);
+    list       = ptr1;
+    return list;
+  }
+  else
+  {
+    Node *ptr1 = pointNodeAtPos(list, Position);
+    while (ptr1->next != NULL)
+    {
+      ptr1 = ptr1->next;
+    }
+    ptr1->next = createNode(value);
+    return list;
+  }
+}
+
 Node *insertNode(Node *list, int value, insType type)
 {
   if (type == INS_BEGINING)
