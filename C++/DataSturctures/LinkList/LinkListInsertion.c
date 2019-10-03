@@ -45,31 +45,43 @@ Node *insertNodeEnding(Node *list, int value)
   }
 }
 
-Node *insertNodePostion(Node *list, int value, int Position)
+Node *insertNodePostion(Node *list, int Position, int value)
 {
-  if (list == NULL && Position != 1)
+  if (list == NULL)
   {
-    printf("WARNINIG LINK LIST IS EMPTY\n");
+    if (Position != 1)
+    {
+      printf("WARNINIG LINK LIST IS EMPTY\n");
+      return NULL;
+    }
+    else if (Position == 1)
+    {
+      Node *ptr1 = createNode(value);
+      list       = ptr1;
+      return list;
+    }
   }
-  else if (list == NULL && Position == 1)
+  else if (Position == 1)
   {
     Node *ptr1 = createNode(value);
+    ptr1->next = list;
     list       = ptr1;
     return list;
   }
   else
   {
-    Node *ptr1 = pointNodeAtPos(list, Position);
-    while (ptr1->next != NULL)
+    Node *ptr1 = pointNodeAtPos(list, Position - 1);
+    if (ptr1 != NULL)
     {
-      ptr1 = ptr1->next;
+      Node *ptr2       = ptr1->next;
+      ptr1->next       = createNode(value);
+      ptr1->next->next = ptr2;
+      return list;
     }
-    ptr1->next = createNode(value);
-    return list;
   }
 }
 
-Node *insertNode(Node *list, int value, insType type)
+Node *insertNode(Node *list, int position, int value, insType type)
 {
   if (type == INS_BEGINING)
   {
@@ -78,5 +90,9 @@ Node *insertNode(Node *list, int value, insType type)
   else if (type == INS_ENDING)
   {
     return insertNodeEnding(list, value);
+  }
+  else if (type == INS_POSITION)
+  {
+    return insertNodePostion(list, position, value);
   }
 }

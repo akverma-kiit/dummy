@@ -27,5 +27,14 @@ Node *pointNodeAtPos(Node *list, int position)
 
 int valueOfNodeAtPos(Node *list, int position)
 {
-  return 0;
+  Node *ptr1 = pointNodeAtPos(list, position);
+  if (ptr1 == NULL)
+  {
+    printf("WARNINIG LINK LIST EMPTY OR POSITION \"%d\" NOT FOUND\n", position);
+    return 0;
+  }
+  else
+  {
+    return ptr1->data;
+  }
 }

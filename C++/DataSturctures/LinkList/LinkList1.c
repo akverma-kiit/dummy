@@ -25,7 +25,7 @@ Node *createLinkList(Node *list, insType tpye, int userData, int *arr,
       }
       else
       {
-        list = insertNode(list, value, tpye);
+        list = insertNode(list, -1, value, tpye);
       }
 
       printf("Please press 'y' or 'Y' to continue\n");
@@ -52,7 +52,7 @@ Node *createLinkList(Node *list, insType tpye, int userData, int *arr,
         }
         else
         {
-          list = insertNode(list, arr[size], !tpye);
+          list = insertNode(list, -1, arr[size], !tpye);
         }
         size--;
       }
@@ -67,21 +67,13 @@ int main()
   int arrValue[]       = { 11, 12, 13, 14, 15, 16 };
   unsigned int arrSize = sizeof(arrValue) / sizeof(arrValue[0]);
 
-  // start = createLinkList(start, BEGINING, 1,arrValue);
-  // start = createLinkList(start, ENDING, 1,arrValue);
-
-  // start = createLinkList(start, ENDING, 0, arrValue, arrSize);
   start = createLinkList(start, INS_ENDING, 0, arrValue, arrSize);
-
   printLinkList(start);
 
-  int pos    = 7;
-  Node *temp = pointNodeAtPos(start, pos);
-  if (temp != NULL)
-  {
-    printf("NODE=%#08X AT POS=%d\tNODE DATA=%d\tAND NODE NEXT DATA=%#08X\n", temp, pos, temp->data, temp->next);
-  }
+  start = insertNode(start, 1, 99, INS_POSITION);
+  printLinkList(start);
 
+  //W8 Console
   char buf[15];
   gets(buf);
   return 0;

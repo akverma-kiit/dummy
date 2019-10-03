@@ -26,8 +26,9 @@ typedef enum deleteType
   DEL_VALUE,
 } delType;
 
-Node *insertNode(Node *list, int value, insType type);
+Node *insertNode(Node *list, int position, int value, insType type);
 void printLinkList(Node *list);
+
 Node *pointNodeAtPos(Node *list, int position);
 int valueOfNodeAtPos(Node *list, int position);
 

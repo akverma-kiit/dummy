@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LinkList1.c" />
+    <ClCompile Include="LinkListDeletion.c" />
     <ClCompile Include="LinkListInsertion.c" />
     <ClCompile Include="LinkListPrinting.c" />
     <ClCompile Include="LinkListTraversal.c" />
