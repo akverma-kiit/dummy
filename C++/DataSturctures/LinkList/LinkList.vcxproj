@@ -152,6 +152,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LinkList1.c" />
+    <ClCompile Include="LinkListInsertion.c" />
+    <ClCompile Include="LinkListPrinting.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LlinkListUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

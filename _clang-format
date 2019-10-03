@@ -1,0 +1,115 @@
+---
+Language:        Cpp
+# BasedOnStyle:  LLVM
+AccessModifierOffset: -2 # public:
+AlignAfterOpenBracket: Align # Has no effect here
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: false # Looks weird if enabled
+AlignEscapedNewlines: Right # Multi-line macros are not used so much
+AlignOperands:   true
+AlignTrailingComments: true # Aligns consecutive comments
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine: false # Single line blocks not allowed
+AllowShortCaseLabelsOnASingleLine: false # Single line cases not allowed
+AllowShortFunctionsOnASingleLine: All # Does not work ?
+AllowShortIfStatementsOnASingleLine: false # Single line ifs not allowed
+AllowShortLoopsOnASingleLine: false # Single line loops not allowed
+AlwaysBreakAfterDefinitionReturnType: None # Deprecated
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: true # Documentation has diffrent enum values ?
+BinPackArguments: true # Has no effect
+BinPackParameters: true # Has no effect
+# These settings are only effective if BreakBeforeBraces: Custom is set
+BraceWrapping:
+  AfterClass:      true
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterObjCDeclaration: true
+  AfterStruct:     true
+  AfterUnion:      true
+  # AfterExternBlock: false # Not supported in VS 2017 15.7.5
+  BeforeCatch:     true
+  BeforeElse:      true
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBinaryOperators: None # None: Does not change existing breaks, but still aligns them
+BreakBeforeBraces: Custom
+BreakBeforeInheritanceComma: true # Not in documentation. Hidden feature ?
+BreakBeforeTernaryOperators: false # false: Does not break into multiple lines
+BreakConstructorInitializersBeforeComma: false # This is not documented
+BreakConstructorInitializers: BeforeComma # Only works if ConstructorInitializerAllOnOneLineOrOnePerLine: false
+BreakStringLiterals: true
+ColumnLimit:    0 # We have wide monitors
+CommentPragmas:  '^ IWYU pragma:' # We do not comment pramas
+CompactNamespaces: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerIndentWidth: 2
+ContinuationIndentWidth: 0
+Cpp11BracedListStyle: false # This one closes the braces on the same line, weird. Don't enable
+DerivePointerAlignment: true # Works together with PointerAlignment
+DisableFormat:   false
+ExperimentalAutoDetectBinPacking: false # One argument per line
+FixNamespaceComments: true # Adds a comment at the end of the namespace
+ForEachMacros:   
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+# IncludeBlocks:   Preserve  # Not supported in VS 2017 15.7.5
+IncludeCategories: 
+  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority:        2
+  - Regex:           '^(<|"(gtest|gmock|isl|json)/)'
+    Priority:        3
+  - Regex:           '.*'
+    Priority:        1
+IncludeIsMainRegex: '(Test)?$' # Not sure where this is used
+IndentCaseLabels: true
+# IndentPPDirectives: None # Not supported in VS 2017 15.7.5
+IndentWidth:     2
+IndentWrappedFunctionNames: false # Does not apply if functions are not wrapped
+KeepEmptyLinesAtTheStartOfBlocks: false
+MacroBlockBegin: '' # Not used
+MacroBlockEnd:   '' # Not used
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: All # Indent members inside namespace
+PenaltyBreakAssignment: 2 # Penalties apply if line length is set
+PenaltyBreakBeforeFirstCallParameter: 19
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 60
+PointerAlignment: Left # Also applies to References
+# RawStringFormats:  # Not supported in VS 2017 15.7.5
+  # - Delimiter:       pb # Not supported in VS 2017 15.7.5
+  #  Language:        TextProto  # Not supported in VS 2017 15.7.5
+  #  BasedOnStyle:    google # Not supported in VS 2017 15.7.5
+ReflowComments:  true # Applies only if line length is set
+SortIncludes:    true # Seems to sort upper-case headers first. "" first and then <>. The priority depends on IncludeCategories
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: false # Do not use C-Style casts
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+# SpaceBeforeCpp11BracedList : true # Not supported in VS 2017 15.7.5
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles:  false
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard:        Cpp11 # Applies also to Cpp14, 17 and 20
+TabWidth:        2 # Tabs are not used
+UseTab:          Never
+# Manual styles not supported by clang-format
+# const - always to the right of the type
+# newline between function definitions if it does not exist
+# Update Pch optimization script to add newline after Pch header because of clang-format include sorting
+...
+

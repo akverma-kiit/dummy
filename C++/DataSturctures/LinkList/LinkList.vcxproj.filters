@@ -18,5 +18,16 @@
     <ClCompile Include="LinkList1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LinkListPrinting.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkListInsertion.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="LlinkListUtility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
