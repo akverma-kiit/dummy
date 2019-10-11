@@ -27,14 +27,17 @@ typedef enum deleteType
 } delType;
 
 //Insertion
-Node *insertNode(Node *list, int position, int value, insType type);
+Node *insertNode(Node *list, int Position, int value, insType type);
 
 //Deletion
-Node *deleteNode(Node *list, int position, int value, delType type);
+Node *deleteNode(Node *list, int Position, int value, insType type);
 
 //Display & Traversal
-void printLinkList(Node *list);
-Node *pointNodeAtPos(Node *list, int position);
-int valueOfNodeAtPos(Node *list, int position);
+void printNode(char *message, Node *Pointer, int nodePos);
+void printLinkList(Node *list, int nodePrint);
+
+//Get Node or Node Value
+Node *pointNodeAtPos(Node *list, int Position);
+int valueOfNodeAtPos(Node *list, int Position);
 
 #endif // !LLINKLISTUTILITY_H

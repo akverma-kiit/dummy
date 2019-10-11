@@ -1,7 +1,7 @@
 /******************************************************************************
 LinkList1.c
  * :
-This file contains the 'main' function. Program execution begins and ends
+This file contains the 'main' function. Program execution begins ends
  * there.
 
 *******************************************************************************/
@@ -66,12 +66,30 @@ int main()
   Node *start          = NULL;
   int arrValue[]       = { 11, 12, 13, 14, 15, 16 };
   unsigned int arrSize = sizeof(arrValue) / sizeof(arrValue[0]);
+  start                = createLinkList(start, INS_ENDING, 0, arrValue, arrSize);
+  //printLinkList(start,-1);
 
-  start = createLinkList(start, INS_ENDING, 0, arrValue, arrSize);
-  printLinkList(start);
+  start = NULL;
+  start = insertNode(start, -1, 49, INS_BEGINING); //INS_BEGINING INS_ENDING INS_POSITION
+  start = insertNode(start, -1, 164, INS_ENDING);
+  start = insertNode(start, 2, 67, INS_POSITION);
+  start = insertNode(start, 3, 99, INS_POSITION);
+  printLinkList(start, 1);
 
-  start = insertNode(start, 1, 99, INS_POSITION);
-  printLinkList(start);
+  start = deleteNode(start, 1, -1, DEL_ENDING); //DEL_BEGINING DEL_ENDING DEL_POSITION
+  printLinkList(start, -1);
+
+  start = deleteNode(start, 1, -1, DEL_ENDING);
+  printLinkList(start, -1);
+
+  start = deleteNode(start, 0, -1, DEL_POSITION);
+  printLinkList(start, -1);
+
+  //start = deleteNode(start, -1, -1, DEL_BEGINING);
+  //printLinkList(start, -1);
+
+  //start = deleteNode(start, -1, -1, DEL_ENDING);
+  //printLinkList(start, -1);
 
   //W8 Console
   char buf[15];
