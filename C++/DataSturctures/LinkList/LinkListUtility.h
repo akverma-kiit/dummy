@@ -1,5 +1,5 @@
 #pragma once
-#ifndef LLINKLISTUTILITY_H
+#ifndef LINKLISTUTILITY_H
 
 #include < stdlib.h>
 #include <malloc.h>
@@ -40,4 +40,4 @@ void printLinkList(Node *list, int nodePrint);
 Node *pointNodeAtPos(Node *list, int Position);
 int valueOfNodeAtPos(Node *list, int Position);
 
-#endif // !LLINKLISTUTILITY_H
+#endif // !LINKLISTUTILITY_H

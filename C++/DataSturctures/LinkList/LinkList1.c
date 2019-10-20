@@ -5,7 +5,7 @@ This file contains the 'main' function. Program execution begins ends
  * there.
 
 *******************************************************************************/
-#include "LlinkListUtility.h"
+#include "LinkListUtility.h"
 
 Node *createLinkList(Node *list, insType tpye, int userData, int *arr,
                      int size)
