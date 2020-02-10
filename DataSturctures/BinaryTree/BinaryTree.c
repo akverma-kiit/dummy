@@ -18,5 +18,5 @@ int main()
   insertNode(Root, 60);
   insertNode(Root, 80);
 
-  printBST(Root, PRE_ORDER);
+  //printBST(Root, PRE_ORDER);
 }

@@ -36,6 +36,13 @@ void postOrderTraversal(Node *Root)
   //printf("\n*****************\n\n");
 }
 
+/*
+typedef void (*func_t)(); // pointer to function with no args and void return
+... func_t fptr;          // variable of pointer to function
+... void D::setDisconnectFunc(func_t func)
+{
+  fptr = func;*/
+
 void printBST(Node *Root, tType order)
 {
   if (Root == NULL)
